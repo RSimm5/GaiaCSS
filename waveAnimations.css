@@ -1,0 +1,121 @@
+html {
+    background-repeat: no-repeat;
+    background: repeating-linear-gradient(
+      45deg,
+      #333,
+      #333 20px,
+      #222 20px,
+      #222 40px
+    );
+}
+
+body {background: none;}
+
+#columns{
+    margin-top: -80px;
+    left: calc(30% - 300px); /* centering */
+}
+
+#column_2 {
+    max-height: 80vh;
+    min-height: 400px;
+    overflow: auto;
+}
+
+.panel h2 {
+    font-size: 20pt;
+    color: black;
+    font-family: Verdana, sans-serif;
+    -webkit-text-stroke: 1px #03a9f4c0;
+    background-color: transparent;
+}
+
+.panel:hover h2 {
+    -webkit-text-stroke: 1px #03a9f4;
+    text-shadow: 0 0 5px #03a9f4c0;
+    transition: text-shadow 0.1s;
+}
+
+/* befores are set to panel names. May need to change*/
+#id_details h2::before {content: 'N0W M0W';}
+#id_about h2::before {content: 'ABOUT';}
+#id_contact h2::before {content: 'CONTACT';}
+#id_friends h2::before {content: 'FRIENDS';}
+#id_wishlist h2::before {content: 'WISHLIST';}
+#id_journal h2::before {content: 'JOURNAL';}
+#id_equipment h2::before {content: 'EQUIPS';}
+#id_footprints h2::before {content: 'VISITORS';}
+#id_comments h2::before {content: 'COMMENTS';}
+#id_interests h2::before {content: 'INTERESTS';}
+
+
+.panel h2::before {
+    color: #03a9f4;
+    position: absolute;
+    animation: wave 4s ease-in-out infinite;
+}
+
+
+/* animation credits to Álvaro trigo on CodePen */
+@keyframes wave {
+    0%,
+    100% {
+        clip-path: polygon(0% 45%, 16% 44%, 33% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+    }
+
+    50% {
+        clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+    }
+}
+
+#column_1 .panel,
+#column_2,
+#column_3 .panel {
+    color: white;
+    border-radius: 3px;
+    transform: scale(0.99);
+    animation: colorChange 4s ease-in-out infinite;
+}
+
+#column_1 .panel:hover,
+#column_2:hover,
+#column_3 .panel:hover {
+    background-color: #000;
+    transform: scale(1.01);
+    transition: transform 0.2s;
+    animation: none;
+}
+
+#column_2 .panel {
+    background-color: transparent;
+    color: white;
+}
+
+.panel a {
+    color: #03a9f4;
+}
+
+@keyframes colorChange {
+
+    0%,
+    100% {
+        background-color: #0007;
+    }
+
+    50% {
+        background-color: #000;
+    }
+}
+
+
+/* comments */
+#id_comments dd {
+    text-align: justify;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+}
+#id_comments p a {color: white;}
+#id_comments #alert_container a {color: white;}
+#id_comments img {margin: 10px;}
+#id_comments dt a {margin: 0 0 0 60px;}
+#id_comments .date {margin: 0 40px 0 0;}

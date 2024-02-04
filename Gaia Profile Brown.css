@@ -1,0 +1,154 @@
+/* Profile coded by MyStarry
+ * Requirements: Contacts panel in column 1
+ * all else in column 2 */
+
+/* background */
+html, body {
+  background: url(https://i.pinimg.com/originals/e6/ff/5a/e6ff5ad0aa254317dd6d3677e8a70d56.gif) fixed top left;
+  background-size: cover;
+}
+
+#gaia_header {
+  opacity: 0.8;
+}
+
+/* columns */
+#columns {
+	left: calc(50% - 330px); /* centering */
+}
+#column_3{display: none;}
+
+#column_1{display: block; width: 0px;}
+
+#columns, #column_1, #column_2, #column_3{
+	overflow: visible;
+}
+
+/* general panels */
+#column_2 .panel{
+	color: white;
+	background-color: transparent;
+	height: 0;
+	overflow: hidden;
+	position: static;
+	padding: 0 10px;
+	width: 512px;
+	z-index: 0;
+}
+#column_2 .panel h2{
+	/*appearance*/
+	text-align: center;
+	color: white;
+	border-radius: 3px;
+	font: bold 12px Segoe Print;
+	letter-spacing: 2px;
+	background-color: #2d1f0f;
+	box-shadow: inset 0 0 5px -3px white;
+	width: 100px;
+	/*positioning*/
+	position: absolute;
+	top: 400px;
+}
+#column_2 .panel:hover{
+	height: 300px;
+	padding: 20px 10px;
+	transition: 0.3s ease-out;
+	overflow: auto;
+}
+#column_2 .panel:hover h2{background-color: #B69D7A; transition: 0.2s;}
+
+.panel a {
+  color: #2d1f0f;
+}
+
+#column_2 .panel:nth-of-type(n){margin-top: -10px;}
+
+/* Individual panels */
+#id_details{
+	margin-top: auto !important; 
+	margin-left: calc(50% - 150px) !important;
+	height: 300px !important;
+	width: 300px !important;
+	border-radius: 100%;
+	box-shadow: inset 0 0 10px -3px white;
+	background-color: rgba(182, 157, 122, 0.5) !important;
+}
+#id_details h2{
+	padding-left: 100px;
+	margin-top: 10px !important;
+	top: auto !important;
+	width: 300px;
+	background-color: transparent !important;
+	box-shadow: 0 0 0 0 transparent !important;
+}
+#id_details:hover{padding: 0 10px !important;} /* do NOT animate */
+
+#id_about{margin-top: 120px !important;} /* merge panels */
+
+#column_2 .panel:nth-of-type(2) h2{left: 40px;}
+#column_2 .panel:nth-of-type(3) h2{left: 180px;}
+#column_2 .panel:nth-of-type(4) h2{left: 322px;}
+#column_2 .panel:nth-of-type(5) h2{left: 464px;}
+
+#id_contact{
+	/* background for panels */
+	background-color: rgba(182, 157, 122, 0.5);
+	box-shadow: inset 0 0 10px -3px white;
+	width: 506px;
+	height: 310px;
+	position: static;
+	margin-top: 420px;
+	margin-left: 10px;
+}
+
+/*contacts */
+#id_contact h2{display: none;}
+#id_contact ul li span, #id_contact ul li a{
+	width: 0px; height: 0px;
+	position: absolute;
+	padding: 20px;
+
+	background-color: #D2E0F0;
+	background-size: 30px;
+	background-position: center center;
+	background-repeat: no-repeat;
+
+	border-radius: 20%;
+	margin-top: -100px; 
+	text-indent: -9999px;
+	filter: invert(1);
+}
+#id_contact ul li span:hover, #id_contact ul li a:hover{background-color: #496285; transition: .2s;}
+
+#id_contact ul li:nth-child(1) span, #id_contact ul li:nth-child(1) a { 
+	/* Friend */
+	background-image: url(https://image.flaticon.com/icons/png/128/24/24115.png) ;
+	margin-left: 170px;
+}
+
+#id_contact ul li:nth-child(2) span, #id_contact ul li:nth-child(2) a{ 
+	/* Message */
+	background-image: url(https://image.flaticon.com/icons/png/512/15/15004.png);
+	margin-left: 225px;
+}
+
+#id_contact ul li:nth-child(3) span, #id_contact ul li:nth-child(3) a{ 
+	/* Trade */
+	background-image: 
+url(https://www.shareicon.net/data/256x256/2015/11/29/679518_arrows_512x512.png);
+	margin-left: 280px;
+}
+
+
+
+
+
+
+/* extra */
+
+body::-webkit-scrollbar, .panel::-webkit-scrollbar {
+  width: 0px;  /*Remove scrollbar*/
+  background: transparent;  /* enforce */
+}
+
+.forum_userstatus{border-radius: 10px;}

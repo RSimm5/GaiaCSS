@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Gotham Rounded SSm';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Gotham Rounded SSm'), url('https://fonts.cdnfonts.com/s/71224/gothamrndssm_book.woff') format('woff');
+}
+
+.panel {
+    font-family: 'Gotham Rounded SSm', sans-serif;
+    font-size: 12pt;
+}
+
+.panel::after {
+    background: #000;
+    height: 40px;
+    color: #FFFFFF;
+    font: 700 30px/38px 'Open Sans Condensed', sans-serif;
+    text-align: center;
+    display: block;
+    content: 'TEST';
+}

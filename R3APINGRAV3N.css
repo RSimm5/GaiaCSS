@@ -1,0 +1,241 @@
+/* *****************************************************
+* Profile made by MyStarry                             *
+*   Requirements:                                      *
+*        Column 1: details and contacts panel          *
+*        Column 2: up to 4 tabs                        *
+*        Column 3: the 5th tab, starting with About.   *
+*                  You can add as many panels as you   *
+*                  want here.			       *
+***************************************************** */
+
+
+/* import fonts */
+@font-face {
+    font-family: 'Punkboy';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Punkboy'), url('https://fonts.cdnfonts.com/s/48486/punkboy_tbs.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'SmudgeStick';
+    font-style: normal;
+    font-weight: 500;
+    src: local('SmudgeStick'), url('https://fonts.cdnfonts.com/s/18274/SmudgeStick.woff') format('woff');
+}
+
+/* GEN APPEARANCE */
+html, body {
+  background: url(https://images.unsplash.com/photo-1601654152371-0ceae53a92c7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1948&q=80) fixed center center;
+  background-size: cover;
+}
+
+/* HEADER */
+#gaia_header img{border: 5px double black;}
+#gaia_header a{
+  font-family: 'Punkboy', sans-serif;
+  font-size: 10pt;
+  margin: 0 5px;
+  transition: 0.2s;
+}
+
+#gaia_header a:hover{
+  text-decoration: none;
+  color: yellow !important;
+  transition: 0.2s;
+}
+
+#gaia_header ul{
+  color: rgba(0,0,0,0) !important;
+  background: transparent !important;
+}
+
+body #gaia_header{
+  opacity: 1;
+  background: rgba(0, 0, 0, .7);
+  box-shadow: 0 0 10px black;
+  border-bottom: 5px solid transparent;
+}
+
+/* COLUMNS */
+#columns, #column_1, #column_2
+{overflow: visible;}
+
+#column_2 .panel, #column_3 .panel, #column_1 h2, #column_3 h2
+{background-color: transparent;}
+
+#columns{left: calc(50% - 300px);}
+
+#column_1{overflow: visible; width: 0;}
+
+#column_1 .panel{
+  background-color: rgba(0,0,0,0.7)
+}
+
+.panel{
+  color: #888;
+  font-family: 'SmudgeStick', sans-serif;
+  font-size: 9pt;
+}
+
+.panel a{
+  color: white;
+  font-weight: normal;
+
+}
+
+.panel h2{
+  font-family: 'Punkboy', sans-serif;
+  font-size: 9pt;
+  letter-spacing: 1px;
+  color: white;
+
+  background-color: rgba(0,0,0,0.7);
+}
+
+
+/* COLUMN 2: TABS */
+#column_2 .panel h2{
+  position: fixed;
+  margin-top: -50px;
+  padding: 5px 0;
+  width: 100px;
+  height: 15px;
+  text-align: center;
+}
+#column_2 .panel{
+  position: fixed; 
+  margin-top: 50px;
+  margin-left: 30px;
+  height: 0px;
+  width: 450px;
+  overflow: hidden;
+  padding: 0 10px;
+  margin-left: 200px;
+  transition: 0.3s ease-out;
+}
+#column_2 .panel:hover{
+  height: 260px;
+  overflow: auto;
+  transition: 0.2s;
+}
+
+#column_2 .panel:hover h2{color: yellow; transition: 0.2s;}
+
+#column_2 .panel:nth-of-type(1) h2{margin-left: -15px;}
+#column_2 .panel:nth-of-type(2) h2{margin-left: 85px;}
+#column_2 .panel:nth-of-type(3) h2{margin-left: 185px;}
+#column_2 .panel:nth-of-type(4) h2{margin-left: 285px;}
+
+/* COLUMN 3 + ABOUT */
+#column_3{
+  width: 475px;
+  height: 0;
+  overflow: auto;
+  position: absolute;
+  left: 230px;
+  top: 35px;
+  transition: 0.3s ease-out;
+}
+
+#column_3:hover{ height: 275px; transition: 0.2s;}
+#column_3:hover #id_about h2{color: yellow;}
+
+#id_about h2{
+  position: fixed;
+  margin-top: -50px;
+  margin-left: 385px;
+  width: 75px;
+  text-align: center;
+  padding: 5px 0;
+  background-color: rgba(0,0,0,.7)
+}
+
+/* DETAILS */
+#id_details{
+  width: 200px;
+  height: 250px;
+  margin-left: -100px;
+}
+
+/* CONTACTS */
+#id_contact{
+  /* background for tabbed panels */
+  width: 450px;
+  height: 270px;
+  position: fixed;
+  top: 200px;
+  margin-left: 205px;
+}
+#id_contact h2{display: none;}
+
+#id_contact ul li span, #id_contact ul li a{
+  width: 0; height: 0;
+  position: absolute;
+  padding: 12px;
+  border: 5px solid transparent;
+
+  background-color: rgba(255,255,255,0.7);
+  background-size: 30px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  top:270px; 
+  text-indent: -9999px;
+  filter: invert(1);
+}
+#id_contact ul li span:hover, #id_contact ul li a:hover{
+  filter: invert(90%) sepia(30%) saturate(2000%) hue-rotate(0deg) brightness(100%) contrast(200%);
+}
+
+#id_contact ul li:nth-child(1) span, #id_contact ul li:nth-child(1) a { 
+  /* Friend */
+  background-image: url(https://image.flaticon.com/icons/png/128/24/24115.png) ;
+  margin-left: -300px;
+}
+
+#id_contact ul li:nth-child(2) span, #id_contact ul li:nth-child(2) a{ 
+  /* Message */
+  background-image: url(https://image.flaticon.com/icons/png/512/15/15004.png);
+  margin-left: -225px;
+}
+
+#id_contact ul li:nth-child(3) span, #id_contact ul li:nth-child(3) a{ 
+  /* Trade */
+  background-image: 
+url(https://www.shareicon.net/data/256x256/2015/11/29/679518_arrows_512x512.png);
+  margin-left: -150px;
+}
+
+/* COMMENTS */
+#id_comments dd {
+  text-align: justify;
+  padding-bottom: 10px;
+  margin-bottom: 0;
+}
+#id_comments dt{border-bottom: 0px transparent;}
+#id_comments dd:nth-of-type(even), dt:nth-of-type(even) {background: transparent;}
+#id_comments dd:nth-of-type(odd), dt:nth-of-type(odd) {background: #000; box-shadow: 0 0 10px rgba(0,0,0,0.2); border-radius: 10px;}
+
+
+#id_comments a:hover{
+  color: yellow;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+#id_comments img{ margin: 10px;}
+#id_comments dt a{ margin: 0 0 0 10px;}
+#id_comments .date{ margin: 0 10px 0 0;}
+
+
+/* EXTRA */
+
+#column_3::-webkit-scrollbar, .panel::-webkit-scrollbar {
+  width: 0px;  /*Remove scrollbar*/
+  background: transparent;  /* enforce */
+}
+
+.forum_userstatus{display: none;}
+
